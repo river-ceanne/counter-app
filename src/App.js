@@ -8,37 +8,37 @@ const Header = () => {
   );
 };
 
-class Content extends React.Component {
+class Counter extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      counter: 0,
+      count: 0,
     };
   }
 
   handleCounter = e => {
-    let counter = e.target.value;
-    this.setState({ counter });
+    let count = e.target.value;
+    this.setState({ count });
     console.log(this.state);
   };
 
   handleClickMinus = e => {
     e.preventDefault();
-    let counter = this.state.counter - 1;
-    this.setState({ counter });
+    let count = this.state.count - 1;
+    this.setState({ count });
   };
 
   handleClickAdd = e => {
     e.preventDefault();
-    let counter = this.state.counter + 1;
-    this.setState({ counter });
+    let count = this.state.count + 1;
+    this.setState({ count });
   };
 
   render() {
     return (
       <div>
-        <h2>{this.state.counter}</h2>
+        <p>{this.state.count}</p>
         <button onClick={this.handleClickMinus}>-</button>
         <button onClick={this.handleClickAdd}>+</button>
       </div>
@@ -51,7 +51,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Header />
-        <Content />
+        <Counter />
       </React.Fragment>
     );
   }
